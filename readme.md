@@ -1,10 +1,6 @@
 # AWS CDK ハンズオン
 
-<https://pages.awscloud.com/rs/112-TZM-766/images/HOL-10_AWS_Summit_Online_2020_Management.pdf>
-
-> 本コースのゴール<br>
-> • コードでAWS環境を管理する方法を理解すること<br>
-> • AWS CDK ( TypeScript ) を利用したAWS環境の構築方法を学ぶこと
+[<https://pages.awscloud.com/rs/112-TZM-766/images/HOL-10_AWS_Summit_Online_2020_Management.pdf>](https://cdkworkshop.com/20-typescript.html)
 
 ## TOC
 
@@ -19,6 +15,12 @@
 事前準備はこちらへ。
 
 → [事前準備: 環境構築]([/Users/airi/aws/aws-cdk-handson/docs/事前準備_環境構築.md](https://github.com/AiriNarita/cdk_hands-on/blob/main/Users/airi/aws/aws-cdk-handson/docs/%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89.md))
+
+## 開発
+
+ハンズオン掲載
+
+※後でちょっと補足の作るかも
 
 ## 使用サービスの概要(詳細は別ページ)
 
