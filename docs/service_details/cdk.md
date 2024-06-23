@@ -48,7 +48,8 @@
 
 ### 要素①[**コンストラクト (Construct)**](https://docs.aws.amazon.com/ja_jp/cdk/v2/guide/constructs.html)
 
-- AWS の各種サービスや機能をコード上で定義し、CloudFormation テンプレートを生成するための再利用可能なブロック
+- AWS の各種サービスや機能をコード上で定義し、**CloudFormation テンプレートを生成するための再利用可能なブロック**
+- クラウドコンポーネントを表し、CloudFormationがリソースを作成するために必要なすべてを**カプセル化**
 
 #### <コンストラクトの抽象化レベル>
 
@@ -80,3 +81,13 @@
 **4. AWS へのデプロイ**
 
 - `npx aws-cdk deploy --all` コマンドを実行して CloudFormation テンプレートから AWS リソースをデプロイします。
+
+## 料金体系
+
+WIP
+
+## [コスト最適化とベストプラクティス](https://aws.amazon.com/jp/builders-flash/202309/awsgeek-aws-cdk/#:~:text=AWS%20CDK%20%E3%81%AE%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0,%E3%81%AE%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%82%92%E8%A1%A8%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+
+- アプリの**モデル化にはスタックではなくコンストラクトを**使用する
+- **必要最小限のスタックを使用する**
+- 抽象化された権限設定やネットワーク接続設定を活用する
