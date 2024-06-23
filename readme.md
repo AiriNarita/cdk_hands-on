@@ -39,14 +39,14 @@
 
 ### [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/jp/cdk/)
 
-→ [詳細ページはこちら](/Users/airi/aws/aws-cdk-handson/docs/service_details/cdk.md)
+→ [詳細ページはこちら](https://github.com/AiriNarita/cdk_hands-on/blob/main/docs/service_details/cdk.md)
 
 - **AWSの環境を 一般のプログラミング言語で記述できるツールキット**
 -　コードを使用して AWS インフラストラクチャを管理するために使用できるオープンソースフレームワークで、このアプローチは、**Infrastructure as Code (IaC)** と呼ぶ
 
 ### [AWS Lambda](https://aws.amazon.com/jp/lambda/)
 
-→ [サービスの詳細はこちらのページにまとめた](docs/service_details/lambda.md)
+→ [サービスの詳細はこちらのページにまとめた](https://github.com/AiriNarita/cdk_hands-on/blob/main/docs/service_details/lambda.md)
 
 > イベント発生時にコードを実行し、コンピューティングリソースを自動的に管理するコンピューティングサービス
 
@@ -57,13 +57,13 @@
 
 ## [Amazon API Gateway](https://aws.amazon.com/jp/api-gateway/)
 
-→ [サービスの詳細はこちらのページにまとめた](/Users/airi/aws/aws-cdk-handson/docs/service_details/amazon_api-gateway.md)
+→ [サービスの詳細はこちらのページにまとめた](https://github.com/AiriNarita/cdk_hands-on/blob/main/docs/service_details/amazon_api-gateway.md) WIP
 
 - **APIの作成、公開、保守、モニタリング、保護を簡単に行えるサービス**
 
 ## [AWS CloudFormation](https://aws.amazon.com/jp/cloudformation/)
 
-→[サービスの詳細はこちらのページにまとめた](/Users/airi/aws/aws-cdk-handson/docs/service_details/cloudformation.md)
+→[サービスの詳細はこちらのページにまとめた](https://github.com/AiriNarita/cdk_hands-on/blob/main/docs/service_details/cloudformation.md) WIP
 
 - **AWSリソースをプロビジョニングできるサービス**
 - CDKを利用することで、CloudFormationのテンプレートを自動生成できる
