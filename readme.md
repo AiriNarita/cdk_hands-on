@@ -32,3 +32,14 @@
 - **APIの作成、公開、保守、モニタリング、保護を簡単に行えるサービス**
 
 ## [AWS CloudFormation](https://aws.amazon.com/jp/cloudformation/)
+
+→[サービスの詳細はこちらのページにまとめた](/Users/airi/aws/aws-cdk-handson/service_details/cloudformation.md)
+
+- **AWSリソースをプロビジョニングできるサービス**
+- CDKを利用することで、CloudFormationのテンプレートを自動生成できる
+- AWSインフラを管理
+
+## 用語
+
+- プロビジョニング（Provisioning）:<br>
+システムやアプリケーションが**動作するために必要なリソース**（ハードウェア、ソフトウェア、ネットワーク、ストレージなど）**を準備、設定、展開するプロセス**を指す。
