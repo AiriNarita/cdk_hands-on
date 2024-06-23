@@ -25,4 +25,10 @@
 = EC2インスタンスなどのサーバーを準備しなくてもコードを実行できるサーバーレスコンピューティングサービス<br />
 = **サーバーレスアプリケーション**
 
-## Amazon API Gateway
+## [Amazon API Gateway](https://aws.amazon.com/jp/api-gateway/)
+
+→ [サービスの詳細はこちらのページにまとめた](/Users/airi/aws/aws-cdk-handson/service_details/amazon_api-gateway.md)
+
+- **APIの作成、公開、保守、モニタリング、保護を簡単に行えるサービス**
+
+## [AWS CloudFormation](https://aws.amazon.com/jp/cloudformation/)
