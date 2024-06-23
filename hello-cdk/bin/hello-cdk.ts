@@ -3,6 +3,13 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { HelloCdkStack } from '../lib/hello-cdk-stack';
 
+/**
+ * CdkWorkshopStackからクラス をロードしてインスタンス化している.
+ * (定義されたスタックをロードしてインスタンス化するクラス)
+ * このファイルをこれ以上見る必要はない!!!
+ */
+
+
 const app = new cdk.App();
 new HelloCdkStack(app, 'HelloCdkStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
