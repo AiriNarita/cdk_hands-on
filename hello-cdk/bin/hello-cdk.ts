@@ -7,6 +7,8 @@ import { HelloCdkStack } from '../lib/hello-cdk-stack';
  * CdkWorkshopStackからクラス をロードしてインスタンス化している.
  * (定義されたスタックをロードしてインスタンス化するクラス)
  * このファイルをこれ以上見る必要はない!!!
+ * 
+ * https://cdkworkshop.com/20-typescript/20-create-project/300-structure.html
  */
 
 
