@@ -59,3 +59,24 @@
 | L3 コンストラクト | 複数の L2 コンストラクトを組み合わせて、特定のアプリケーションやタスクのパターンを実現する高レベルな抽象化を提供します。複雑なセットアップを簡潔なコードで記述することが可能になり、よくある AWS のアーキテクチャパターンを効率的に実装することができます。 |
 
 ## [開発フロー](https://aws.amazon.com/jp/builders-flash/202309/awsgeek-aws-cdk/#:~:text=AWS%20CDK%20%E3%81%AE%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0,%E3%81%AE%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%82%92%E8%A1%A8%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+
+![alt text](pic/cdk_develop.png)
+
+**1.CDK プロジェクトの初期化**
+
+- `npx aws-cdk init app --language [language]` 実行。
+  - [language] の部分は、 利用するプログラミング言語 (例：typescript や python) を指定します。
+- 対象アカウント、リージョンにつき、一回限り cdk bootstrap コマンドを実行して CDK 環境を初期化します。
+
+**2. CDK アプリケーションの作成**
+
+- 初期化したプロジェクトでアプリケーションをコーディングする。
+  - TypeScript で初期化した場合は、lib/ ディレクトリ内の .ts ファイルで AWS リソースを定義します。
+
+**3. CloudFormation テンプレートの生成**
+
+- `npx aws-cdk synth` コマンドを実行して、CDK アプリケーションからCloudFormation テンプレートを生成。
+
+**4. AWS へのデプロイ**
+
+- `npx aws-cdk deploy --all` コマンドを実行して CloudFormation テンプレートから AWS リソースをデプロイします。
