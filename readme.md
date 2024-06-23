@@ -18,7 +18,7 @@
 
 事前準備はこちらへ。
 
-→ [事前準備: 環境構築](/Users/airi/aws/aws-cdk-handson/docs/事前準備_環境構築.md)
+→ [事前準備: 環境構築]([/Users/airi/aws/aws-cdk-handson/docs/事前準備_環境構築.md](https://github.com/AiriNarita/cdk_hands-on/blob/main/Users/airi/aws/aws-cdk-handson/docs/%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89.md))
 
 ## 使用サービスの概要(詳細は別ページ)
 
