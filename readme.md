@@ -23,6 +23,17 @@
 
 ※後でちょっと補足の作るかも
 
+## 開発後作成されたCloudFormation
+
+開発で、メインスタックの定義ができたら、
+`cdk synth`コマンドを使用しCDK アプリを合成.
+テンプレートを確認する。
+
+**できたものはこちらに記載した**
+
+- [そのままバージョン](/Users/airi/aws/aws-cdk-handson/docs/cloud_formation.yaml)
+- [解説(コメント)つけたバージョン](/Users/airi/aws/aws-cdk-handson/docs/cloudFormation_coment+.yaml)
+
 ## 使用サービスの概要(詳細は別ページ)
 
 ### [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/jp/cdk/)

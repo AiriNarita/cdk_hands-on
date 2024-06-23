@@ -1,0 +1,158 @@
+Resources:
+  # ⭐️SQSキューの定義
+  CdkWorkshopQueue50D9D426:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 300  # キューの可視性タイムアウトを300秒に設定
+    UpdateReplacePolicy: Delete # 更新時にキューを削除
+    DeletionPolicy: Delete # スタック削除時にキューを削除
+    Metadata:
+      aws:cdk:path: HelloCdkStack/CdkWorkshopQueue/Resource # CDKによるリソースパス情報
+  CdkWorkshopQueuePolicyAF2494A5: # SQSキューのポリシーを定義
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action: sqs:SendMessage # SQSにメッセージを送信する権限
+            Condition:
+              ArnEquals:
+                aws:SourceArn:
+                  Ref: CdkWorkshopTopicD368A42F # 送信元のSNSトピックのARN
+            Effect: Allow # 許可ポリシー
+            Principal:
+              Service: sns.amazonaws.com # SNSサービスに権限を付与
+            Resource:
+              Fn::GetAtt:
+                - CdkWorkshopQueue50D9D426
+                - Arn
+        Version: "2012-10-17" # ポリシーのバージョン
+      Queues:
+        - Ref: CdkWorkshopQueue50D9D426 # ポリシーを適用するキュー
+    Metadata:
+      aws:cdk:path: HelloCdkStack/CdkWorkshopQueue/Policy/Resource # CDKによるリソースパス情報
+
+  # SNSトピックのサブスクリプションを定義
+  CdkWorkshopQueueHelloCdkStackCdkWorkshopTopic674F8E47A8850BC7:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Endpoint:
+        Fn::GetAtt:
+          - CdkWorkshopQueue50D9D426 # キューのARNを取得
+          - Arn
+      Protocol: sqs # プロトコルをSQSに設定
+      TopicArn:
+        Ref: CdkWorkshopTopicD368A42F # SNSトピックのARNを参照
+    DependsOn:
+      - CdkWorkshopQueuePolicyAF2494A5 # このリソースはキューポリシーに依存する
+    Metadata:
+      aws:cdk:path: HelloCdkStack/CdkWorkshopQueue/HelloCdkStackCdkWorkshopTopic674F8E47/Resource
+  # SNSトピックを定義
+  CdkWorkshopTopicD368A42F:
+    Type: AWS::SNS::Topic
+    Metadata:
+      aws:cdk:path: HelloCdkStack/CdkWorkshopTopic/Resource
+  # CDKのメタデータ情報
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Analytics: v2:deflate64:H4sIAAAAAAAA/1WOywrCMBBFv8V9OhoRxXV/QFv30iYRpq1Jm0kUKfl38wDBzcy5hwsze+CHE+w23ZsqIcdqwh7W1nViZFHdV1oI1qtXXrH6oQvkeTETis9PlhgY6dhvfU/C4uzQ6NT4yzczo0g2QwgJG0XGW5Fv1EZLTM3AtJEKBtq++BH4OX45EGJlvXb4VNCU/QVNJUywwgAAAA==
+    Metadata:
+      aws:cdk:path: HelloCdkStack/CDKMetadata/Default # CDKによるリソースパス情報
+    Condition: CDKMetadataAvailable # このリソースは特定の条件に基づいて作成される
+Conditions:
+  CDKMetadataAvailable:
+    Fn::Or: # 条件の組み合わせ
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - af-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ca-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-northwest-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-3
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - il-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - sa-east-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-2
+# cdk synth で　一緒に出てきた
+# Parameters:
+#   BootstrapVersion:
+#     Type: AWS::SSM::Parameter::Value<String>
+#     Default: /cdk-bootstrap/hnb659fds/version
+#     Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]
+# Rules:
+#   CheckBootstrapVersion:
+#     Assertions:
+#       - Assert:
+#           Fn::Not:
+#             - Fn::Contains:
+#                 - - "1"
+#                   - "2"
+#                   - "3"
+#                   - "4"
+#                   - "5"
+#                 - Ref: BootstrapVersion
+#         AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.
