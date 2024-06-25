@@ -18,11 +18,13 @@
 
 → [事前準備: 環境構築](https://github.com/AiriNarita/cdk_hands-on/blob/main/docs/%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89.md)
 
-## 開発
+## 開発開始
 
 ハンズオン掲載
 
 ※後でちょっと補足の作るかも
+
+→ Hands on URL:<https://cdkworkshop.com/20-typescript.html>
 
 ## 開発後作成されたCloudFormation
 
