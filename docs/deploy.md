@@ -12,3 +12,5 @@ Unable to resolve AWS account to use. It must be either configured when you defi
 
 こちらの資料参照
 <https://cdkworkshop.com/15-prerequisites/200-account.html>
+
+**IAMについてはDiscutionにまとめる**
